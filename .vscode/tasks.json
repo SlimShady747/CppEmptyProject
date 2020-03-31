@@ -1,0 +1,33 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+
+	//FIRST USE: Make sure your main file is defined correctly in line #11
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build Project (make) and Run",
+			"type": "shell",
+			"command": "cd ${workspaceFolder}; make; echo \"---Running main binary---\"; ./projectNameMain; echo \"---Main binary finished---\"",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "Clean Project (make clean)",
+			"type": "shell",
+			"command": "cd ${workspaceFolder}; make clean",
+			"problemMatcher": []
+		},
+		{
+			"label": "Clean and Build (make)",
+			"type": "shell",
+			"command": "cd ${workspaceFolder}; make clean; make",
+			"dependsOn": [
+				"Clean Project (make clean)",
+				"Build Project (make)"
+			]
+		}
+	]
+}
