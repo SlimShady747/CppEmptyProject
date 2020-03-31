@@ -12,7 +12,7 @@
 
 Derived* Derived::clone() const
   {
-	  std::cout<<"Returning new object..."<<std::endl;
+	  std::cout<<"Returning new ofbject..."<<std::endl;
     return new Derived(*this);
   }
 void foo(Base* original)
